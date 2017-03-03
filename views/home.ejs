@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> My Portofolio</title>
+<link rel="stylesheet" href="css/bootstrap.css" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<div class="container">
+      <div class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li role="presentation" ><a href="/">Home</a></li>
+            <li role="presentation"><a href="/users/register">Register</a></li>
+            <li role="presentation"><a href="/users/logout">Logout</a></li>
+          </ul>
+        </nav>
+        <h3 class="text-muted">Seniors Locker </h3>
+      </div>
+      </div>
+
+      <div class="row">
+                    <div class="col-md-12 col-lg-12">
+                    <%if (user){%>
+                        <h1 class="intro"><span>Hello,</span> <%=username%> <span></h1>
+                 <%} else {%>
+                 <h1 class="intro"><span></span> Hello <span></h1>
+                 <%}%>
+                    </div>
+                </div>
+
+        <div class="col-xs-12 col-md-8">
+            <div class="row">
+                <% for(var i=0; i<portofolios.length; i++){%>
+                    <div class="card col-xs-12">
+                        <h4 class="card-title"> <%= portofolios[i].name %></h4>
+                        <a id ="go" href="/users/home/<%= portofolios[i].id %>"  class="btn btn-primary card-link">Visit Portofolio</a>
+                    </div>
+                <% } %>
+            </div>
+        </div>
+        <div class="col-xs-12 col-md-4">
+            <div class="form-container">
+                <h3 style="margin-bottom:40px;">Add work</h3>
+                   
+                    <div class="form-group">
+                        <label for="InputTitle">Title</label>
+                        <input name = "title" type="text" class="form-control" id="InputTitle" placeholder="Title">
+                    </div>
+                  
+              <form class="form" method="POST" action="/put/link/">
+                    <div class="form-group">
+                        <label for="InputLink">Link</label>
+                        <input name = "URL" type="url" class="form-control" id="InputLink" placeholder="Link">
+                         <button type="submit" class="btn btn-default">Submit</button>
+                    </div>
+                     </form>
+                <form class="form" method="POST" action="/put/screenshot/">
+
+                  <div class="form-group">
+      <label for="screenshot" class="col-xs-2 control-label">Add a screenshot </label>
+      <div class="col-xs-12">
+        <input type="file" class="form-control col-sm-10" name="screenshot"
+          placeholder="screenshot" />
+      </div>
+    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+            </div>
+         </div>
+    </div></div>
+</body>
+</html>
+
+<script type-"text/javascript">
+var s=protofolios[i];
+$(#go).click(function(){$(#go).load('/users/home' , s);
+
+});
+   </script>
+
+       
+        
+
+

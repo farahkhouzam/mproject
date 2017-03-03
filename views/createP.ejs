@@ -1,0 +1,48 @@
+<% include partials/headerP1%>
+
+
+      
+<h2 class="page-header"> Creating your Portofolio..  </h2>
+ <form class="form-horizontal" method="POST" action="/users/home" enctype="multipart/form-data">
+<div class="form-group">
+      <label for="name" class="col-xs-2 control-label">Name</label>
+      <div class="col-xs-12">
+        <input type="text" class="form-control col-sm-10" name="name"
+          placeholder="name" />
+      </div>
+    </div>
+    <br>
+     <div class="form-group">
+                        <label for="InputTitle">Title</label>
+                        <input name = "title" type="text" class="form-control" id="inputt" placeholder="Title">
+                    </div>
+
+    <div class="form-group">
+      <label for="img" class="col-xs-2 control-label">Upload a profile picture </label>
+      <div class="col-xs-12">
+        <input type="file" class="form-control col-sm-10" name="img"
+          placeholder="img" />
+      </div>
+    </div>
+    <br>
+            <div class="form-group">
+      <label for="screenshot" class="col-xs-2 control-label">Add a screenshot </label>
+      <div class="col-xs-12">
+        <input type="file" class="form-control col-sm-10" name="screenshot"
+          placeholder="screenshot" />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="InputLink">Link</label>
+      <input name = "URL" type="url" class="form-control" id="InputLink" placeholder="Link">
+       </div>
+    <br>
+    <div class = "button">
+    <button type="submit" class="btn btn-default"> Submit</button>
+    </div>
+    <br>
+            
+                </form>
+                </body>
+</html>
