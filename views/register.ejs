@@ -1,12 +1,7 @@
-<% includeartials/headerR%>
+<% include partials/headerR%>
 
 <h2 class="page-header">Register</h2>
 
-       {{#if errors}}
-       {{#each errors}}
-       <div class="notice error">< i class="icon-remove-sign icon-large"></i>{{msg}}
-       <ahref="#close" class="icon-remove"></a></div>
-       {{/if}}
 
 <form method="post" action="/users/register">
    <div class="form-group">
